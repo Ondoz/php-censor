@@ -412,6 +412,11 @@ class Builder implements LoggerAwareInterface
 
         // Create a working copy of the project:
         if (!$this->build->createWorkingCopy($this, $this->buildPath)) {
+            $this->interpolator->setupInterpolationVars(
+                $this->build,
+                APP_URL
+            );
+
             throw new Exception('Could not create a working copy.');
         }
 

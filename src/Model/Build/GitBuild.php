@@ -36,7 +36,7 @@ class GitBuild extends Build
      */
     public function createWorkingCopy(Builder $builder, $buildPath)
     {
-        $key = trim($this->getProject()->getSshPrivateKey());
+        $key = \trim($this->getProject()->getSshPrivateKey());
 
         if (!empty($key)) {
             $success = $this->cloneBySsh($builder, $buildPath);
